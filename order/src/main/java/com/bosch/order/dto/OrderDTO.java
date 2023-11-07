@@ -16,6 +16,5 @@ import java.util.List;
 public class OrderDTO {
     private String id;
     private String orderNumber;
-    @Valid
     private List<OrderItemDTO> orderItems = new ArrayList<>();
 }

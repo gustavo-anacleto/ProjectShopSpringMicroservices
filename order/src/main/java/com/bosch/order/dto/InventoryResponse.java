@@ -1,12 +1,11 @@
-package com.bosch.inventory.dto;
+package com.bosch.order.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Builder
+@NoArgsConstructor
 @Getter
-@Setter
+@AllArgsConstructor
 public class InventoryResponse {
     private String skuCode;
     private boolean isInStock;

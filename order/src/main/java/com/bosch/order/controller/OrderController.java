@@ -1,5 +1,6 @@
 package com.bosch.order.controller;
 
+import com.bosch.order.config.exception.NotInStockException;
 import com.bosch.order.dto.OrderDTO;
 import com.bosch.order.service.interfaces.OrderService;
 import jakarta.validation.Valid;
@@ -19,7 +20,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping
-    public ResponseEntity<OrderDTO> placeOrder(@RequestBody @Valid OrderDTO dto){
+    public ResponseEntity<OrderDTO> placeOrder(@RequestBody @Valid OrderDTO dto) throws NotInStockException {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(orderService.placeOrder(dto));
     }
